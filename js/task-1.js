@@ -5,7 +5,6 @@ console.log(categoriesRef);
 console.log(`В списке ${categoriesRef.length} категорий`);
 
 Array.from(categoriesRef).map((item) => {
-  console.log(item);
   console.log(`Категория: ${item.querySelector('h2').textContent}`);
   const ul = item.querySelector('ul');
   console.log(`Количетво элементов: ${ul.children.length}`);

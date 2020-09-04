@@ -40,5 +40,5 @@ ulRef.insertAdjacentHTML(
     img = `<li style = "display: flex; padding: 10px;"><img alt="${img.alt}" src="${img.url}" width="100px"></li>`;
     acc += img;
     return acc;
-  }, [])
+  }, '')
 );

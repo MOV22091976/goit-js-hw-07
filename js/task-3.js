@@ -36,9 +36,10 @@ const ulRef = document.querySelector('#gallery');
 
 ulRef.insertAdjacentHTML(
   'afterbegin',
-  images.reduce((acc, img) => {
-    img = `<li style = "display: flex; padding: 10px;"><img alt="${img.alt}" src="${img.url}" width="100px"></li>`;
-    acc += img;
-    return acc;
-  }, '')
+  images.reduce(
+    (acc, img) =>
+      acc +
+      `<li style = "display: flex; padding: 10px;"><img alt="${img.alt}" src="${img.url}" width="100px"></li>`,
+    ''
+  )
 );

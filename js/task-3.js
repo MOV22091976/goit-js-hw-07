@@ -20,16 +20,25 @@ const images = [
 
 const ulRef = document.querySelector('#gallery');
 
-images.map((el) => {
-  const li = document.createElement('li');
-  const img = document.createElement('img');
-  img.setAttribute('src', `${el.url}`);
-  img.setAttribute('alt', `${el.alt}`);
-  img.style.display = 'flex';
-  img.style.width = '100px';
-  img.style.padding = '10px';
+// images.map((el) => {
+//   const li = document.createElement('li');
+//   const img = document.createElement('img');
+//   img.setAttribute('src', `${el.url}`);
+//   img.setAttribute('alt', `${el.alt}`);
+//   img.style.display = 'flex';
+//   img.style.width = '100px';
+//   img.style.padding = '10px';
 
-  // img.style.cssText = `display: flex; padding: 10px; width: 100px;`;
-  li.append(img);
-  ulRef.append(li);
-});
+//   // img.style.cssText = `display: flex; padding: 10px; width: 100px;`;
+//   li.append(img);
+//   ulRef.append(li);
+// });
+
+ulRef.insertAdjacentHTML(
+  'afterbegin',
+  images.reduce((acc, img) => {
+    img = `<li style = "display: flex; padding: 10px;"><img alt="${img.alt}" src="${img.url}" width="100px"></li>`;
+    acc += img;
+    return acc;
+  }, [])
+);
